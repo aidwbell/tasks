@@ -12,45 +12,43 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Hello World
             </p>
-            <div>
-                <header>The all new 2023 992 911 GT3RS</header>
-                <img
-                    src="public/992.jpg"
-                    alt="A picture of a 992 GT3RS driving on a track"
-                />
-                <ol>
-                    <li>Top speed is 190 MPH</li>
-                    <li>Base price: $225,250</li>
-                    <li>Horsepower: 518 @ 8,500 rpm.</li>
-                </ol>
-                <Button onClick={() => console.log("Hello World!")}>
-                    Log Hello World
-                </Button>
-                <Container>
-                    <Row>
-                        <Col>
-                            Here is the first column!
-                            <div
-                                style={{
-                                    width: "300px",
-                                    height: "150px",
-                                    backgroundColor: "Red"
-                                }}
-                            ></div>
-                        </Col>
-                        <Col>
-                            Here is the second column!
-                            <div
-                                style={{
-                                    width: "300px",
-                                    height: "150px",
-                                    backgroundColor: "Red"
-                                }}
-                            ></div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+            <h2>The all new 2023 992 911 GT3RS</h2>
+            <img
+                src="public/992.jpg"
+                alt="A picture of a 992 GT3RS driving on a track"
+            />
+            <ol>
+                <li>Top speed is 190 MPH</li>
+                <li>Base price: $225,250</li>
+                <li>Horsepower: 518 @ 8,500 rpm.</li>
+            </ol>
+            <Button onClick={() => console.log("Hello World!")}>
+                Log Hello World
+            </Button>
+            <Container>
+                <Row>
+                    <Col>
+                        Here is the first column!
+                        <div
+                            style={{
+                                width: "300px",
+                                height: "150px",
+                                backgroundColor: "Red"
+                            }}
+                        ></div>
+                    </Col>
+                    <Col>
+                        Here is the second column!
+                        <div
+                            style={{
+                                width: "300px",
+                                height: "150px",
+                                backgroundColor: "Red"
+                            }}
+                        ></div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 }
