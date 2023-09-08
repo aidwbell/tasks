@@ -15,7 +15,7 @@ function App(): JSX.Element {
             <div>
                 <header>The all new 2023 992 911 GT3RS</header>
                 <img
-                    src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.motortrend.com%2Freviews%2F2023-porsche-911-gt3-rs-first-drive-review%2F&psig=AOvVaw3U94yzeOVa2ubL13wCHcr_&ust=1694296536488000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCIDgqM-AnIEDFQAAAAAdAAAAABAD"
+                    src="/992.jpg"
                     alt="A picture of a 992 GT3RS driving on a track"
                 />
                 <ol>
@@ -32,8 +32,8 @@ function App(): JSX.Element {
                             Here is the first column!
                             <div
                                 style={{
-                                    width: "4px",
-                                    height: "8px",
+                                    width: "300px",
+                                    height: "150px",
                                     backgroundColor: "Red"
                                 }}
                             ></div>
@@ -42,8 +42,8 @@ function App(): JSX.Element {
                             Here is the second column!
                             <div
                                 style={{
-                                    width: "4px",
-                                    height: "8px",
+                                    width: "300px",
+                                    height: "150px",
                                     backgroundColor: "Red"
                                 }}
                             ></div>
