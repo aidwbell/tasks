@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import img from "./992.jpg";
 import "./App.css";
 
 function App(): JSX.Element {
@@ -14,7 +13,10 @@ function App(): JSX.Element {
                 automatically reload. Hello World
             </p>
             <header>The all new 2023 992 911 GT3RS</header>
-            img src={img}
+            <img
+                src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.motortrend.com%2Freviews%2F2023-porsche-911-gt3-rs-first-drive-review%2F&psig=AOvVaw3U94yzeOVa2ubL13wCHcr_&ust=1694296536488000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCIDgqM-AnIEDFQAAAAAdAAAAABAD"
+                alt="A picture of a 992 GT3RS driving on a track"
+            />
             <ol>
                 <li>Top speed is 190 MPH</li>
                 <li>Base price: $225,250</li>
