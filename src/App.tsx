@@ -15,7 +15,7 @@ function App(): JSX.Element {
             <div>
                 <header>The all new 2023 992 911 GT3RS</header>
                 <img
-                    src="/992.jpg"
+                    src="public/992.jpg"
                     alt="A picture of a 992 GT3RS driving on a track"
                 />
                 <ol>
