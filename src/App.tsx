@@ -13,7 +13,7 @@ function App(): JSX.Element {
                 automatically reload. Hello World
             </p>
             <header className="Task-header">
-                The all new 2023 992 911 GT3RS
+                <h1>The all new 2023 992 911 GT3RS</h1>
             </header>
             <img
                 src="https://files.porsche.com/filestore/image/multimedia/none/992-gt3-rs-modelimage-sideshot/model/cfbb8ed3-1a15-11ed-80f5-005056bbdc38/porsche-model.png"
