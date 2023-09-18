@@ -25,16 +25,8 @@
     color: white;
 }
 
-.App-Task-header {
-    width: 100%;
-    background-color: #3618ac;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.Task {
+    background-color: red;
 }
 
 .App-link {
