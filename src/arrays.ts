@@ -62,23 +62,22 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    const processedMessages = messages.map((message) => {
-        // Check if the message ends with "!", if so, make it uppercase
-        if (message.endsWith("!")) {
-            return message.toUpperCase();
-        }
+    const modifiedMessages: string[] = [];
 
-        // Filter out messages that end with "?"
+    for (const message of messages) {
         if (message.endsWith("?")) {
-            return undefined;
+            // Remove messages ending with "?"
+            continue;
+        } else if (message.endsWith("!")) {
+            // Make messages ending with "!" uppercase
+            modifiedMessages.push(message.toUpperCase());
+        } else {
+            // Keep other messages as they are
+            modifiedMessages.push(message);
         }
+    }
 
-        // If none of the rules apply, keep the message
-        return message;
-    });
-
-    // Use filter to remove messages that ended with "?"
-    return processedMessages.filter((message) => message !== undefined);
+    return modifiedMessages;
 };
 
 /**
