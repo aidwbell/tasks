@@ -12,7 +12,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Hello World
             </p>
-            <header className="Task-header">
+            <header className="Task">
                 <h1>The all new 2023 992 911 GT3RS</h1>
             </header>
             <img

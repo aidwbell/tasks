@@ -5,6 +5,14 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
+    const length = numbers.length;
+    if (length === 0) {
+        return [];
+    } else if (length === 1) {
+        return [numbers[0], numbers[0]];
+    } else {
+        return [numbers[0], numbers[length - 1]];
+    }
     return numbers;
 }
 
@@ -13,7 +21,8 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const trip = numbers.map((num) => num * 3);
+    return trip;
 }
 
 /**
@@ -21,7 +30,11 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    const toI = numbers.map((str) => {
+        const parsedInt = parseInt(str, 10);
+        return isNaN(parsedInt) ? 0 : parsedInt;
+    });
+    return toI;
 }
 
 /**
@@ -32,7 +45,15 @@ export function stringsToIntegers(numbers: string[]): number[] {
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
-    return [];
+    const numbers = amounts.map((str) => {
+        if (str.startsWith("$")) {
+            str = str.substring(1);
+        }
+
+        const parsedInt = parseInt(str, 10);
+        return isNaN(parsedInt) ? 0 : parsedInt;
+    });
+    return numbers;
 };
 
 /**
@@ -41,7 +62,23 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const processedMessages = messages.map((message) => {
+        // Check if the message ends with "!", if so, make it uppercase
+        if (message.endsWith("!")) {
+            return message.toUpperCase();
+        }
+
+        // Filter out messages that end with "?"
+        if (message.endsWith("?")) {
+            return undefined;
+        }
+
+        // If none of the rules apply, keep the message
+        return message;
+    });
+
+    // Use filter to remove messages that ended with "?"
+    return processedMessages.filter((message) => message !== undefined);
 };
 
 /**
@@ -49,7 +86,8 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    const shrtwords = words.filter((word) => word.length < 4);
+    return shrtwords.length;
 }
 
 /**
@@ -58,7 +96,14 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length === 0) {
+        return true;
+    }
+    const isValidColor = colors.every(
+        (color) => color === "red" || color === "blue" || color === "green"
+    );
+
+    return isValidColor;
 }
 
 /**
@@ -69,7 +114,14 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        return "0=0";
+    }
+
+    const sum = addends.reduce((total, num) => total + num, 0);
+    const equation = `${sum}=${addends.join("+")}`;
+
+    return equation;
 }
 
 /**
@@ -82,5 +134,28 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    let sumOfPositives = 0;
+    let negativeFound = false;
+    const result = [];
+
+    for (const value of values) {
+        if (value < 0 && !negativeFound) {
+            // Found the FIRST negative number
+            negativeFound = true;
+            result.push(value);
+            result.push(sumOfPositives);
+        } else {
+            if (value >= 0) {
+                sumOfPositives += value;
+            }
+            result.push(value);
+        }
+    }
+
+    if (!negativeFound) {
+        // If no negative number was found, append the sum to the end
+        result.push(sumOfPositives);
+    }
+
+    return result;
 }
