@@ -62,22 +62,24 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    const modifiedMessages: string[] = [];
-
-    for (const message of messages) {
-        if (message.endsWith("?")) {
-            // Remove messages ending with "?"
-            continue;
-        } else if (message.endsWith("!")) {
-            // Make messages ending with "!" uppercase
-            modifiedMessages.push(message.toUpperCase());
+    // Use map to transform messages based on the rules
+    const transformedMessages = messages.map((message) => {
+        // Check if the message ends with "!"
+        if (message.endsWith("!")) {
+            // If it ends with "!", make it uppercase
+            return message.toUpperCase();
         } else {
-            // Keep other messages as they are
-            modifiedMessages.push(message);
+            // Otherwise, return the message as is
+            return message;
         }
-    }
+    });
 
-    return modifiedMessages;
+    // Use filter to remove messages that end with "?"
+    const filteredMessages = transformedMessages.filter(
+        (message) => !message.endsWith("?")
+    );
+
+    return filteredMessages;
 };
 
 /**
@@ -133,26 +135,24 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    let sumOfPositives = 0;
     let negativeFound = false;
-    const result = [];
+    let sumOfPositives = 0;
 
-    for (const value of values) {
-        if (value < 0 && !negativeFound) {
-            // Found the FIRST negative number
-            negativeFound = true;
-            result.push(value);
-            result.push(sumOfPositives);
-        } else {
-            if (value >= 0) {
-                sumOfPositives += value;
+    const result = values
+        .map((value) => {
+            if (value < 0 && !negativeFound) {
+                negativeFound = true;
+                return [value, sumOfPositives];
+            } else {
+                if (value >= 0) {
+                    sumOfPositives += value;
+                }
+                return value;
             }
-            result.push(value);
-        }
-    }
+        })
+        .flat();
 
     if (!negativeFound) {
-        // If no negative number was found, append the sum to the end
         result.push(sumOfPositives);
     }
 
