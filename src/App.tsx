@@ -23,7 +23,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload. Hello World
             </p>
-            <h1>The all new 2023 992 911 GT3RS</h1>
+            <h2>The all new 2023 992 911 GT3RS</h2>
             <img
                 src="https://files.porsche.com/filestore/image/multimedia/none/992-gt3-rs-modelimage-sideshot/model/cfbb8ed3-1a15-11ed-80f5-005056bbdc38/porsche-model.png"
                 height="540px"
@@ -64,7 +64,7 @@ function App(): JSX.Element {
             </Container>
             =====
             <hr></hr>
-            {/* <DoubleHalf></DoubleHalf> */}
+            <DoubleHalf></DoubleHalf>
             <hr></hr>
             <ChooseTeam></ChooseTeam>
             <hr></hr>

@@ -12,35 +12,35 @@ export function d6(): number {
 }
 
 export function TwoDice(): JSX.Element {
-    // Define two state variables for the values of the two dice
-    const [leftDie, setLeftDie] = useState<number>(d6());
-    const [rightDie, setRightDie] = useState<number>(d6());
+    // Initialize the state for two dice values
+    const [leftDieValue, setLeftDieValue] = useState(4);
+    const [rightDieValue, setRightDieValue] = useState(5);
 
-    // Function to handle rolling the left die
+    // Function to roll the left die and update its value
     const rollLeftDie = () => {
-        // Generate a new random value for the left die
-        setLeftDie(d6());
+        setLeftDieValue(d6());
     };
 
-    // Function to handle rolling the right die
+    // Function to roll the right die and update its value
     const rollRightDie = () => {
-        // Generate a new random value for the right die
-        setRightDie(d6());
+        setRightDieValue(d6());
     };
 
-    // Determine if the player has won or lost
-    const isWin = leftDie === rightDie && leftDie !== 1;
-    const isLose =
-        (leftDie === 1 && rightDie === 1) || (leftDie !== 1 && rightDie === 1);
+    // Check if the game is won or lost
+    const gameOutcome = leftDieValue === rightDieValue;
+    const gameMessage = gameOutcome
+        ? leftDieValue === 1
+            ? "Lose"
+            : "Win"
+        : "";
 
     return (
         <div>
-            <span data-testid="left-die">{leftDie}</span>
-            <span data-testid="right-die">{rightDie}</span>
-            <button onClick={rollLeftDie}>Roll Left</button>
-            <button onClick={rollRightDie}>Roll Right</button>
-            {isWin && <p>You Win</p>}
-            {isLose && <p>You Lose</p>}
+            <span data-testid="left-die">{leftDieValue}</span>
+            <span data-testid="right-die">{rightDieValue}</span>
+            <Button onClick={rollLeftDie}>Roll Left</Button>
+            <Button onClick={rollRightDie}>Roll Right</Button>
+            {gameMessage && <div>{gameMessage}</div>}
         </div>
     );
 }
