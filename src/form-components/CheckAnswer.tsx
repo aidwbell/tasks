@@ -13,7 +13,7 @@ export function CheckAnswer({
 
     return (
         <div>
-            <h3>Check Answer</h3>
+            <p>Check Answer</p>
             <input
                 type="text"
                 placeholder="Enter your answer"
