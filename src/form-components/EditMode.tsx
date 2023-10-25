@@ -23,7 +23,7 @@ export function EditMode(): JSX.Element {
     }
     return (
         <div>
-            <h3>Edit Mode</h3>
+            <p>Edit Mode</p>
             <Form.Check
                 type="switch"
                 id="mode-check"
