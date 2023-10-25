@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 
 export function MultipleChoiceQuestion({
     options,
@@ -10,7 +10,7 @@ export function MultipleChoiceQuestion({
     const [selectedChoice, setSelectedChoice] = useState(options[0]);
     const [isAnswerCorrect, setIsAnswerCorrect] = useState(false); // Initialize as false
 
-    const handleSelectChange = (e) => {
+    const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         const userAnswer = e.target.value;
         setSelectedChoice(userAnswer);
         setIsAnswerCorrect(userAnswer === expectedAnswer); // Update the answer correctness
@@ -18,7 +18,7 @@ export function MultipleChoiceQuestion({
 
     return (
         <div>
-            <h3>Multiple Choice Question</h3>
+            <p>Multiple Choice Question</p>
             <select onChange={handleSelectChange} value={selectedChoice}>
                 {options.map((option, index) => (
                     <option key={index} value={option}>
