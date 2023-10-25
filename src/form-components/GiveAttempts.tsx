@@ -28,7 +28,7 @@ export function GiveAttempts(): JSX.Element {
 
     return (
         <div>
-            <h3>Give Attempts</h3>
+            <p>Give Attempts</p>
             <p>Attempts Left: {attemptsLeft}</p>
             <button onClick={handleUseAttempt} disabled={attemptsLeft === 0}>
                 Use

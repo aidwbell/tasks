@@ -22,7 +22,7 @@ export function ChangeColor(): JSX.Element {
 
     return (
         <div>
-            <h3>Change Color</h3>
+            <p>Change Color</p>
             <div>
                 {colors.map((color) => (
                     <label key={color}>
